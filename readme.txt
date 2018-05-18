@@ -19,15 +19,13 @@ git log     //查看提交记录
 git log --graph //查看分支合并图
 git push origin <localBranchName>:<remoteBranchName> //将本地分支推送到远程仓库，并在远程仓库开了一个子分支
 git branch -d <localBranch> //删除本地分支
+git push origin --delete <remoteBranchName> //删除远程分支
 git push origin :<remoteBranch> // 删除远程分支
 
 // 拉取代码
 git pull origin <branchName> //拉取指定分支代码
 git pull --all     //拉取所有分支代码
-i
-// 删除分支
-git push origin --delete <branchName> // 删除远程分支
-git branch -d <branchName>         // 删除本地分支
+
 
 //分支合并
 git merge <branchName>  // 把branchName 和并到当前分支
