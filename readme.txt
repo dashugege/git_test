@@ -18,3 +18,16 @@ git diff    // 查看文件变化
 git log     //查看提交记录
 git log --graph //查看分支合并图
 
+
+// 拉取代码
+git pull origin <branchName> //拉取指定分支代码
+git pull --all     //拉取所有分支代码
+
+// 删除分支
+git push origin --delete <branchName> // 删除远程分支
+git branch -d <branchName>         // 删除本地分支
+
+//分支合并
+git merge <branchName>  // 把branchName 和并到当前分支
+
+
