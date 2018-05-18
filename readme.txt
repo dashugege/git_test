@@ -17,7 +17,9 @@ git status //查看当前状态
 git diff    // 查看文件变化
 git log     //查看提交记录
 git log --graph //查看分支合并图
-
+git push origin <localBranchName>:<remoteBranchName> //将本地分支推送到远程仓库，并在远程仓库开了一个子分支
+git branch -d <localBranch> //删除本地分支
+git branch origin :<remoteBranch> // 删除远程分支
 
 // 拉取代码
 git pull origin <branchName> //拉取指定分支代码
