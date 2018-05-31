@@ -21,13 +21,12 @@ git push origin <localBranchName>:<remoteBranchName> //将本地分支推送到�
 git branch -d <localBranch> //删除本地分支
 git push origin --delete <remoteBranchName> //删除远程分支
 git push origin :<remoteBranch> // 删除远程分支
+git merge <remoteBranchName> // 把remoteBrancheName 分支合并到当前分支
 
 // 拉取代码
 git pull origin <branchName> //拉取指定分支代码
 git pull --all     //拉取所有分支代码
 
 
-//分支合并
-git merge <branchName>  // 把branchName 和并到当前分支
 
 
