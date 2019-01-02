@@ -27,6 +27,11 @@ git merge <remoteBranchName> // 把remoteBrancheName 分支合并到当前分支
 git pull origin <branchName> //拉取指定分支代码
 git pull --all     //拉取所有分支代码
 
+//创建标签
+git tag -a 标签名 -m "注释"  // 添加标签
+git push origin 标签名  //推送标签
+git tag -d  标签名      // 删除标签
+git push origin --tags // 推送所有标签
 
 
 adb 常见命令
