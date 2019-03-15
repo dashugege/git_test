@@ -53,6 +53,26 @@ adb shell pm path com.tencent.mobileqq  列出对应包名的 .apk 位置
 
 
 
+adb wifi 连接手机
+
+
+1.Android Studio中安装ADB WIFI插件。安装成功后重启Android Studio。（没有安装过插件的同仁，请自己搜索）
+
+2.手机USB连接电脑，在Android Studio中，点击Tools->Android->ADB WIFI->ADB USE to WIFI即可
+
+3. 然后拔掉USB，运行即可。
+
+第2步中，可能出现的问题，无法连接手机的IP。
+
+解决办法： 在Android Studio Terminal中连接手机，命令如下：
+adb connect 192.168.1.201
+C:\workspace\android>adb connect 192.168.1.201
+unable to connect to 192.168.1.201:5555: cannot connect to 192.168.1.201:5555: 由于目标计算机积极拒绝，无法连接。 (10061)
+
+如果出现以上问题，则先进行
+adb tcpip 5555
+adb connect 192.168.1.201:5555
+
 
 
 
