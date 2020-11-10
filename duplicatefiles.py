@@ -1,5 +1,6 @@
 import binascii, os
 import hashlib
+import sys
 
 
 def getFilesize(path):
@@ -18,6 +19,9 @@ def getFilesize(path):
             if 'styles' in path: return
             if 'attrs' in path: return
             if '/string.xml' in path: return
+            if '/proguard - rules.pro' in path: return
+            if 'proguard-rules.pro' in path: return
+
 
             size = os.path.getsize(path)
             if not filesizes.has_key(size):
@@ -31,7 +35,6 @@ def getFilesize(path):
 def getSizeEq(filesizes):
     for key in filesizes.keys():
         if len(filesizes[key]) <= 1:
-            # print filesizes[key]
             filesizes.pop(key)
     return filesizes;
 
@@ -50,6 +53,10 @@ def getCrc32(files):
     f.close()
     return crc
 
+def writerFile(file,content):
+    file.write(content)
+    file.write('\n')
+    file.close()
 
 def Eq(val1, val2):
     if val1 == val2:
@@ -61,7 +68,11 @@ def Eq(val1, val2):
 filesizes = {}
 Eqlfiles = {}
 errfile = []
-path = "/Users/muhanxi/muhanxi/as_dict/SY/soyoung_main"
+path = os.getcwd()
+
+
+
+
 
 getFilesize(path)
 filesizes = getSizeEq(filesizes)
@@ -85,9 +96,33 @@ for key in filesizes:
                     if j not in Eqlfiles[str(md5a)]:
                         Eqlfiles[str(md5a)].append(j)
 
-print u'error file:', errfile
+
+
+pathlist = ["module_base.txt","module_bbs.txt","module_business.txt","module_doctor.txt","module_hospital.txt","module_platform.txt"]
+
+path = os.getcwd()
+
+for item in pathlist:
+    if os.path.exists(item):
+        os.remove(item)
 
 for key in Eqlfiles:
-    # print '----------------------------this duplicate files----------------------------------------'
-    for i in Eqlfiles[key]:
-        print 'file', i, key
+    for result in Eqlfiles[key]:
+        if '/base/' in result:
+            f = open("module_base.txt", 'a')
+            writerFile(f, result)
+        if '/bbs/' in result:
+            f = open("module_bbs.txt", 'a')
+            writerFile(f, result)
+        if '/business/' in result:
+            f = open("module_business.txt", 'a')
+            writerFile(f, result)
+        if '/doctor/' in result:
+            f = open("module_doctor.txt", 'a')
+            writerFile(f, result)
+        if '/hospital/' in result:
+            f = open("module_hospital.txt", 'a')
+            writerFile(f, result)
+        if '/platform/' in result:
+            f = open("module_platform.txt", 'a')
+            writerFile(f, result)
